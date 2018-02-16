@@ -15,7 +15,7 @@
 @using (Html.BeginForm("Index", "ServicesTest", FormMethod.Post, new { id = "frm-getActServ", @class = "navbar-form navbar-left" }))
 {
     <div class="input-group mb-3 animated fadeIn fast">
-        @Html.TextBox("activationUID", null, new { maxlength=10, @class = "form-control", @placeholder = "Activation Id..." })
+        @Html.TextBox("activationUID", null, new { maxlength=12, @class = "form-control", @placeholder = "Activation Id..." })
         <div class="input-group-append">
             <input type="submit" class="btn btn-outline-danger" value="Consultar" onclick="return valilateField()" />
         </div>
