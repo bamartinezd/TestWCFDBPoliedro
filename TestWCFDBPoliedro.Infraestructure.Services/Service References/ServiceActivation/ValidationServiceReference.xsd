@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:Comcel.Pol.Wcf.DataContracts" elementFormDefault="qualified" targetNamespace="urn:Comcel.Pol.Wcf.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CreditSecurityContextRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element name="CodigoCadenas" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditSecurityContextRequest" nillable="true" type="tns:CreditSecurityContextRequest" />
+  <xs:complexType name="CategoryCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryCollection" nillable="true" type="tns:ValidatorCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryCollection" nillable="true" type="tns:CategoryCollection" />
+  <xs:complexType name="ValidatorCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Validators" nillable="true" type="tns:ArrayOfValidator" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultingBehavior" type="tns:ValidatorBehavior" />
+      <xs:element minOccurs="0" name="ShowOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryResult" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidatorCategory" nillable="true" type="tns:ValidatorCategory" />
+  <xs:complexType name="ArrayOfValidator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Validator" nillable="true" type="tns:Validator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidator" nillable="true" type="tns:ArrayOfValidator" />
+  <xs:complexType name="Validator">
+    <xs:sequence>
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="ShowName" nillable="true" type="xs:string" />
+      <xs:element name="ValidatorBehavior" type="tns:ValidatorBehavior" />
+      <xs:element name="ValidatorResult" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValidationConcepts" nillable="true" type="tns:ArrayOfValidationConcept" />
+      <xs:element minOccurs="0" name="ValidatorId" type="xs:int" />
+      <xs:element minOccurs="0" name="ShowOrder" nillable="true" type="xs:string" />
+      <xs:element name="HasDetails" type="xs:boolean" />
+      <xs:element name="SpecialValidator" type="xs:boolean" />
+      <xs:element name="Visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Validator" nillable="true" type="tns:Validator" />
+  <xs:simpleType name="ValidatorBehavior">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Informative" />
+      <xs:enumeration value="Restrictive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ValidatorBehavior" nillable="true" type="tns:ValidatorBehavior" />
+  <xs:complexType name="ArrayOfValidationConcept">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationConcept" nillable="true" type="tns:ValidationConcept" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationConcept" nillable="true" type="tns:ArrayOfValidationConcept" />
+  <xs:complexType name="ValidationConcept">
+    <xs:sequence>
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="ConceptValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailRow" nillable="true" type="tns:DetailRow" />
+      <xs:element name="SpecialConcept" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Highlight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Visible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationConcept" nillable="true" type="tns:ValidationConcept" />
+  <xs:complexType name="DetailRow">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Rows" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="SpecialRow" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetailRow" nillable="true" type="tns:DetailRow" />
+  <xs:complexType name="InvalidParameterFaultContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvalidParameterFaultContract" nillable="true" type="tns:InvalidParameterFaultContract" />
+  <xs:complexType name="BankCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankCollection" nillable="true" type="tns:Bank" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankCollection" nillable="true" type="tns:BankCollection" />
+  <xs:complexType name="Bank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bank" nillable="true" type="tns:Bank" />
+  <xs:complexType name="DisabledLineCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DisabledLineCollection" nillable="true" type="tns:DisabledLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisabledLineCollection" nillable="true" type="tns:DisabledLineCollection" />
+  <xs:complexType name="DisabledLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="CustCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisabledDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisabledLine" nillable="true" type="tns:DisabledLine" />
+  <xs:complexType name="ConsultationProcessedPN">
+    <xs:sequence>
+      <xs:element name="DocumentType" type="xs:int" />
+      <xs:element name="DocumentNumber" type="xs:long" />
+      <xs:element name="PortalNumber" type="xs:long" />
+      <xs:element name="DealerId" nillable="true" type="xs:string" />
+      <xs:element name="ProcessedType" nillable="true" type="xs:int" />
+      <xs:element name="Description" nillable="true" type="xs:string" />
+      <xs:element name="Result" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NameClient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastNameClient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id_Solicitud" type="xs:long" />
+      <xs:element minOccurs="0" name="DealerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatePortation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Module" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TmCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SpCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DescriptionPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypePN" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentNumberPN" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultationProcessedPN" nillable="true" type="tns:ConsultationProcessedPN" />
+  <xs:complexType name="CollectionConsultationProcessedPN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CollectionConsultationProcessedPN" nillable="true" type="tns:ConsultationProcessedPN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CollectionConsultationProcessedPN" nillable="true" type="tns:CollectionConsultationProcessedPN" />
+</xs:schema>

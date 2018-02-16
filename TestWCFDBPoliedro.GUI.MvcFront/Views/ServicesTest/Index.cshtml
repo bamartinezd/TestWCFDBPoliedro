@@ -1,0 +1,79 @@
+﻿@model List<TestWCFDBPoliedro.Infraestructure.Services.ServiceActivation.Validator>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="animated fadeIn">Validación activación</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error!
+    </div>
+}
+
+@using (Html.BeginForm("Index", "ServicesTest", FormMethod.Post, new { id = "frm-getActServ", @class = "navbar-form navbar-left" }))
+{
+    <div class="input-group mb-3 animated fadeIn fast">
+        @Html.TextBox("activationUID", null, new { maxlength=10, @class = "form-control", @placeholder = "Activation Id..." })
+        <div class="input-group-append">
+            <input type="submit" class="btn btn-outline-danger" value="Consultar" onclick="return valilateField()" />
+        </div>
+    </div>
+}
+<hr />
+
+@*Mostrar datos*@
+<!-- Table -->
+@if (Model.Count > 0)
+{
+    <div id="div-table">
+        <table class="table table-sm table-bordered table-condensed table-responsive animated fadeIn">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Comportamiento</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderBy(x => x.ValidatorBehavior))
+                {
+                    <tr>
+                        <td>@(string.IsNullOrEmpty(item.Name) ? "N/A" : item.Name)</td>
+                        <td>@(string.IsNullOrEmpty(item.ShowName) ? "N/A" : item.ShowName)</td>
+                        <td>@item.ValidatorBehavior</td>
+         s               <td>
+                            <span class="@(item.ValidatorResult == false ? "badge badge-danger" : "badge badge-success")">
+                                @item.ValidatorResult
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
+
+<script>
+    function valilateField() {
+        var activationUID = document.getElementById('activationUID').value;
+        var validar = true;
+
+        if (activationUID == '') {
+            alert('El campo es obligatorio.');
+            validar = false;
+        }
+        return validar;
+    }
+</script>
+
+
+
+
+
+
+
+

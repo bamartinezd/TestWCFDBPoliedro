@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:Comcel.Pol.Wcf.ServiceContracts" elementFormDefault="qualified" targetNamespace="urn:Comcel.Pol.Wcf.ServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd2" namespace="urn:Comcel.Pol.Wcf.DataContracts" />
+  <xs:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd4" namespace="urn:comcel.pol.wcf.datacontracts" />
+  <xs:element name="ValidateActivationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActivationUID" type="xs:decimal" />
+        <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+        <xs:element xmlns:q1="urn:Comcel.Pol.Wcf.DataContracts" minOccurs="0" name="CreditSecurityContext" nillable="true" type="q1:CreditSecurityContextRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateActivationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Explanation" nillable="true" type="q2:ArrayOfstring" />
+        <xs:element minOccurs="0" name="GlobalResult" type="xs:boolean" />
+        <xs:element xmlns:q3="urn:Comcel.Pol.Wcf.DataContracts" minOccurs="0" name="ValidationResults" nillable="true" type="q3:CategoryCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element xmlns:q4="urn:Comcel.Pol.Wcf.DataContracts" name="BankCollection" nillable="true" type="q4:BankCollection" />
+  <xs:element name="ActivationUid" type="xs:decimal" />
+  <xs:element name="DocumentNumber" type="xs:long" />
+  <xs:element xmlns:q5="urn:Comcel.Pol.Wcf.DataContracts" name="DisabledLinesDetail" nillable="true" type="q5:DisabledLineCollection" />
+  <xs:element name="UpdateType7NamesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActivationUid" type="xs:decimal" />
+        <xs:element minOccurs="0" name="FamilyNames" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Names" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AffectedRows" type="xs:int" />
+  <xs:element xmlns:q6="urn:Comcel.Pol.Wcf.DataContracts" name="ConsultationProcessedPN" nillable="true" type="q6:ConsultationProcessedPN" />
+  <xs:element xmlns:q7="urn:Comcel.Pol.Wcf.DataContracts" name="CollectionConsultationProcessedPN" nillable="true" type="q7:CollectionConsultationProcessedPN" />
+  <xs:element name="NumeroDocumento" nillable="true" type="xs:string" />
+  <xs:element xmlns:q8="urn:comcel.pol.wcf.datacontracts" name="CollectionFinancingLines" nillable="true" type="q8:FinancingLinesCollection" />
+  <xs:element name="IdProducto" nillable="true" type="xs:string" />
+  <xs:element name="Result" type="xs:boolean" />
+  <xs:element name="GetParameterVRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="goToCache" type="xs:boolean" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="oReturn" nillable="true" type="xs:string" />
+  <xs:element name="Apellido" nillable="true" type="xs:string" />
+  <xs:element name="CodigoDistribuidor" nillable="true" type="xs:string" />
+  <xs:element name="CuotaInicial" nillable="true" type="xs:decimal" />
+  <xs:element name="Documento" nillable="true" type="xs:string" />
+  <xs:element name="GamaPlan" type="xs:int" />
+  <xs:element name="IdIndicadorTecnologia" type="xs:unsignedByte" />
+  <xs:element name="IdRegion" type="xs:unsignedByte" />
+  <xs:element name="NumeroCuotas" type="xs:int" />
+  <xs:element name="PorcCuotaInicial" nillable="true" type="xs:decimal" />
+  <xs:element name="PrecioEquipoSinIva" type="xs:decimal" />
+  <xs:element name="TipoDocumento" type="xs:unsignedByte" />
+  <xs:element name="TipoPlan" type="xs:int" />
+  <xs:element name="TipoTransaccion" type="xs:int" />
+  <xs:element name="TipoUsuario" type="xs:int" />
+  <xs:element name="TipoVenta" type="xs:int" />
+  <xs:element name="Usuario" nillable="true" type="xs:string" />
+  <xs:element name="CalificacionDataCredito" nillable="true" type="xs:string" />
+  <xs:element name="CantidadLineasDisponiblesaFinanciar" type="xs:int" />
+  <xs:element name="CupoMaximoEndeudamiento" type="xs:decimal" />
+  <xs:element name="NumeroCuotasMaximoComerciales" type="xs:long" />
+  <xs:element name="ValorCuotaInicialMinimoComercial" type="xs:decimal" />
+</xs:schema>

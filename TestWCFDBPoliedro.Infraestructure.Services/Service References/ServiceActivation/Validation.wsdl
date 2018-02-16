@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="urn:Comcel.Pol.Wcf.ServiceContracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Validation" targetNamespace="urn:Comcel.Pol.Wcf.ServiceContracts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ValidationEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:Comcel.Pol.Wcf.ServiceContracts/Imports">
+      <xsd:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd0" namespace="urn:Comcel.Pol.Wcf.ServiceContracts" />
+      <xsd:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd2" namespace="urn:Comcel.Pol.Wcf.DataContracts" />
+      <xsd:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://wpolba08.comcel.com.co:87/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc?xsd=xsd4" namespace="urn:comcel.pol.wcf.datacontracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateActivationRequest">
+    <wsdl:part name="parameters" element="tns:ValidateActivationRequest" />
+  </wsdl:message>
+  <wsdl:message name="ValidateActivationResponse">
+    <wsdl:part name="parameters" element="tns:ValidateActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidationServiceContract_ValidateActivation_InvalidParameterFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q1="urn:Comcel.Pol.Wcf.DataContracts" name="detail" element="q1:InvalidParameterFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="GetBanksRequest" />
+  <wsdl:message name="GetBanksResponse">
+    <wsdl:part name="BankCollection" element="tns:BankCollection" />
+  </wsdl:message>
+  <wsdl:message name="UpdateType5Request">
+    <wsdl:part name="ActivationUid" element="tns:ActivationUid" />
+  </wsdl:message>
+  <wsdl:message name="UpdateType5Response" />
+  <wsdl:message name="GetDisabledDetailRequest">
+    <wsdl:part name="DocumentNumber" element="tns:DocumentNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetDisabledDetailResponse">
+    <wsdl:part name="DisabledLinesDetail" element="tns:DisabledLinesDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateType7NamesRequest">
+    <wsdl:part name="parameters" element="tns:UpdateType7NamesRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateType7NamesResponse">
+    <wsdl:part name="AffectedRows" element="tns:AffectedRows" />
+  </wsdl:message>
+  <wsdl:message name="ConsultationProcessedPNRequest">
+    <wsdl:part name="ConsultationProcessedPN" element="tns:ConsultationProcessedPN" />
+  </wsdl:message>
+  <wsdl:message name="ConsultationProcessedPNResponse">
+    <wsdl:part name="CollectionConsultationProcessedPN" element="tns:CollectionConsultationProcessedPN" />
+  </wsdl:message>
+  <wsdl:message name="GetLinesForFinancingRequest">
+    <wsdl:part name="NumeroDocumento" element="tns:NumeroDocumento" />
+  </wsdl:message>
+  <wsdl:message name="GetLinesForFinancingResponse">
+    <wsdl:part name="CollectionFinancingLines" element="tns:CollectionFinancingLines" />
+  </wsdl:message>
+  <wsdl:message name="ProductoAplicaRequest">
+    <wsdl:part name="IdProducto" element="tns:IdProducto" />
+  </wsdl:message>
+  <wsdl:message name="ProductoAplicaResponse">
+    <wsdl:part name="Result" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterVRequest">
+    <wsdl:part name="parameters" element="tns:GetParameterVRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetParameterVResponse">
+    <wsdl:part name="oReturn" element="tns:oReturn" />
+  </wsdl:message>
+  <wsdl:message name="MatrizVentaRequest">
+    <wsdl:part name="Apellido" element="tns:Apellido" />
+    <wsdl:part name="CodigoDistribuidor" element="tns:CodigoDistribuidor" />
+    <wsdl:part name="CuotaInicial" element="tns:CuotaInicial" />
+    <wsdl:part name="Documento" element="tns:Documento" />
+    <wsdl:part name="GamaPlan" element="tns:GamaPlan" />
+    <wsdl:part name="IdIndicadorTecnologia" element="tns:IdIndicadorTecnologia" />
+    <wsdl:part name="IdRegion" element="tns:IdRegion" />
+    <wsdl:part name="NumeroCuotas" element="tns:NumeroCuotas" />
+    <wsdl:part name="PorcCuotaInicial" element="tns:PorcCuotaInicial" />
+    <wsdl:part name="PrecioEquipoSinIva" element="tns:PrecioEquipoSinIva" />
+    <wsdl:part name="TipoDocumento" element="tns:TipoDocumento" />
+    <wsdl:part name="TipoPlan" element="tns:TipoPlan" />
+    <wsdl:part name="TipoTransaccion" element="tns:TipoTransaccion" />
+    <wsdl:part name="TipoUsuario" element="tns:TipoUsuario" />
+    <wsdl:part name="TipoVenta" element="tns:TipoVenta" />
+    <wsdl:part name="Usuario" element="tns:Usuario" />
+  </wsdl:message>
+  <wsdl:message name="MatrizVentaResponse">
+    <wsdl:part name="CalificacionDataCredito" element="tns:CalificacionDataCredito" />
+    <wsdl:part name="CantidadLineasDisponiblesaFinanciar" element="tns:CantidadLineasDisponiblesaFinanciar" />
+    <wsdl:part name="CupoMaximoEndeudamiento" element="tns:CupoMaximoEndeudamiento" />
+    <wsdl:part name="NumeroCuotasMaximoComerciales" element="tns:NumeroCuotasMaximoComerciales" />
+    <wsdl:part name="ValorCuotaInicialMinimoComercial" element="tns:ValorCuotaInicialMinimoComercial" />
+  </wsdl:message>
+  <wsdl:portType name="ValidationServiceContract">
+    <wsdl:operation name="ValidateActivation">
+      <wsdl:input wsaw:Action="ValidateActivation" name="ValidateActivationRequest" message="tns:ValidateActivationRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/ValidateActivationResponse" name="ValidateActivationResponse" message="tns:ValidateActivationResponse" />
+      <wsdl:fault wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/ValidateActivationInvalidParameterFaultContractFault" name="InvalidParameterFaultContractFault" message="tns:ValidationServiceContract_ValidateActivation_InvalidParameterFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBanks">
+      <wsdl:input wsaw:Action="GetBanks" name="GetBanksRequest" message="tns:GetBanksRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/GetBanksResponse" name="GetBanksResponse" message="tns:GetBanksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType5">
+      <wsdl:input wsaw:Action="UpdateType5" name="UpdateType5Request" message="tns:UpdateType5Request" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/UpdateType5Response" name="UpdateType5Response" message="tns:UpdateType5Response" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisabledDetail">
+      <wsdl:input wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.GetDisabledDetail" name="GetDisabledDetailRequest" message="tns:GetDisabledDetailRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/GetDisabledDetailResponse" name="GetDisabledDetailResponse" message="tns:GetDisabledDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType7Names">
+      <wsdl:input wsaw:Action="UpdateType7Names" name="UpdateType7NamesRequest" message="tns:UpdateType7NamesRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/UpdateType7NamesResponse" name="UpdateType7NamesResponse" message="tns:UpdateType7NamesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultationProcessedPN">
+      <wsdl:input wsaw:Action="ConsultationProcessedPN" name="ConsultationProcessedPNRequest" message="tns:ConsultationProcessedPNRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/ConsultationProcessedPNResponse" name="ConsultationProcessedPNResponse" message="tns:ConsultationProcessedPNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesForFinancing">
+      <wsdl:input wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.GetLinesForFinancing" name="GetLinesForFinancingRequest" message="tns:GetLinesForFinancingRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/GetLinesForFinancingResponse" name="GetLinesForFinancingResponse" message="tns:GetLinesForFinancingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarProductoAplica">
+      <wsdl:input wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.ValidarProductoAplica" name="ProductoAplicaRequest" message="tns:ProductoAplicaRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/ValidarProductoAplicaResponse" name="ProductoAplicaResponse" message="tns:ProductoAplicaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterV">
+      <wsdl:input wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.GetParameterV" name="GetParameterVRequest" message="tns:GetParameterVRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/GetParameterVResponse" name="GetParameterVResponse" message="tns:GetParameterVResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCondicionesComerciales">
+      <wsdl:input wsaw:Action="MatrizVenta" name="MatrizVentaRequest" message="tns:MatrizVentaRequest" />
+      <wsdl:output wsaw:Action="urn:Comcel.Pol.Wcf.ServiceContracts/ValidationServiceContract/ObtenerCondicionesComercialesResponse" name="MatrizVentaResponse" message="tns:MatrizVentaResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValidationEndpoint" type="tns:ValidationServiceContract">
+    <wsp:PolicyReference URI="#ValidationEndpoint_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ValidateActivation">
+      <soap12:operation soapAction="ValidateActivation" style="document" />
+      <wsdl:input name="ValidateActivationRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ValidateActivationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterFaultContractFault">
+        <soap12:fault use="literal" name="InvalidParameterFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanks">
+      <soap12:operation soapAction="GetBanks" style="document" />
+      <wsdl:input name="GetBanksRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBanksResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType5">
+      <soap12:operation soapAction="UpdateType5" style="document" />
+      <wsdl:input name="UpdateType5Request">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateType5Response">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisabledDetail">
+      <soap12:operation soapAction="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.GetDisabledDetail" style="document" />
+      <wsdl:input name="GetDisabledDetailRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDisabledDetailResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType7Names">
+      <soap12:operation soapAction="UpdateType7Names" style="document" />
+      <wsdl:input name="UpdateType7NamesRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateType7NamesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultationProcessedPN">
+      <soap12:operation soapAction="ConsultationProcessedPN" style="document" />
+      <wsdl:input name="ConsultationProcessedPNRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ConsultationProcessedPNResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesForFinancing">
+      <soap12:operation soapAction="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.GetLinesForFinancing" style="document" />
+      <wsdl:input name="GetLinesForFinancingRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLinesForFinancingResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarProductoAplica">
+      <soap12:operation soapAction="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.ValidarProductoAplica" style="document" />
+      <wsdl:input name="ProductoAplicaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ProductoAplicaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterV">
+      <soap12:operation soapAction="urn:Comcel.Pol.Wcf.ServiceContracts.ValidationServiceContract.GetParameterV" style="document" />
+      <wsdl:input name="GetParameterVRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetParameterVResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCondicionesComerciales">
+      <soap12:operation soapAction="MatrizVenta" style="document" />
+      <wsdl:input name="MatrizVentaRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MatrizVentaResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Validation">
+    <wsdl:port name="ValidationEndpoint" binding="tns:ValidationEndpoint">
+      <soap12:address location="net.tcp://wpolba08.comcel.com.co:810/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://wpolba08.comcel.com.co:810/Comcel.Pol.WCF.Host.Validation/ValidationServiceReference.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
