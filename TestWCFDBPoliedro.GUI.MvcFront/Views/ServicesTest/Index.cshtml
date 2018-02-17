@@ -12,10 +12,10 @@
     </div>
 }
 
-@using (Html.BeginForm("Index", "ServicesTest", FormMethod.Post, new { id = "frm-getActServ", @class = "navbar-form navbar-left" }))
+@using (Html.BeginForm("Index", "ServicesTest", FormMethod.Post, new { id = "frm-getActServ", @class = "navbar-form navbar-left", @type = "number" }))
 {
     <div class="input-group mb-3 animated fadeIn fast">
-        @Html.TextBox("activationUID", null, new { maxlength=13, @class = "form-control", @placeholder = "Activation Id..." })
+        @Html.TextBox("activationUID", null, new { maxlength = 13, @class = "form-control", @placeholder = "Activation Id...", onKeyPress = "return validateNumber(event);" })
         <div class="input-group-append">
             <input type="submit" class="btn btn-outline-danger" value="Consultar" onclick="return valilateField()" />
         </div>
@@ -44,7 +44,7 @@
                         <td>@(string.IsNullOrEmpty(item.Name) ? "N/A" : item.Name)</td>
                         <td>@(string.IsNullOrEmpty(item.ShowName) ? "N/A" : item.ShowName)</td>
                         <td>@item.ValidatorBehavior</td>
-         s               <td>
+                        <td>
                             <span class="@(item.ValidatorResult == false ? "badge badge-danger" : "badge badge-success")">
                                 @item.ValidatorResult
                             </span>
