@@ -44,7 +44,7 @@
                         <td>@(string.IsNullOrEmpty(item.Name) ? "N/A" : item.Name)</td>
                         <td>@(string.IsNullOrEmpty(item.ShowName) ? "N/A" : item.ShowName)</td>
                         <td>@item.ValidatorBehavior</td>
-                        <td>
+                        <td class="text-center">
                             <span class="@(item.ValidatorResult == false ? "badge badge-danger" : "badge badge-success")">
                                 @item.ValidatorResult
                             </span>
@@ -56,6 +56,7 @@
     </div>
 
 }
+
 
 <script>
     function valilateField() {
