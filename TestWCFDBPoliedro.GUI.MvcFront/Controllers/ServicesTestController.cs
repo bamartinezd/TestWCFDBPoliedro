@@ -13,6 +13,7 @@ namespace TestWCFDBPoliedro.GUI.MvcFront.Controllers
         {
             try
             {
+                //
                 ViewBag.Error = string.Empty;
                 var services = new CallServices();
                 var result = (activationUID == 0 ? new List<Validator>() :
