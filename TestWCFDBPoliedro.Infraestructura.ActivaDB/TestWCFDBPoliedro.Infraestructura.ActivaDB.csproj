@@ -11,6 +11,7 @@
     <AssemblyName>TestWCFDBPoliedro.Infraestructura.ActivaDB</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,10 +35,8 @@
       <HintPath>..\packages\CodeFirstSeeder.1.0.3\lib\net45\CodeFirstSeeder.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
@@ -65,10 +64,9 @@
     <Compile Include="Model\ModelActiva.cs" />
     <Compile Include="Model\SERVICIOS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ActivacionRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -77,6 +75,20 @@
     <Content Include="SeederExample.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Cross.Common\TestWCFDBPoliedro.Cross.Common.csproj">
+      <Project>{f8bd493f-d190-4f72-8643-f1c53492f0f1}</Project>
+      <Name>TestWCFDBPoliedro.Cross.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Domain.Contracts\TestWCFDBPoliedro.Domain.Contracts.csproj">
+      <Project>{cba92335-f514-447a-9d7e-6d4840c2dfb7}</Project>
+      <Name>TestWCFDBPoliedro.Domain.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Domain.Entities\TestWCFDBPoliedro.Domain.Entities.csproj">
+      <Project>{dba13829-3129-4eed-9da8-6332a028af70}</Project>
+      <Name>TestWCFDBPoliedro.Domain.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

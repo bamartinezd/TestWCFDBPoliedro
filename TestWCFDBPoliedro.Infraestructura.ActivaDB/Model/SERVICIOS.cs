@@ -1,10 +1,10 @@
 namespace TestWCFDBPoliedro.Infraestructura.ActivaDB.Model
 {
     using System;
-    using System.Collections.Generic;
+    //using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    //using System.Data.Entity.Spatial;
 
     [Table("EXTRANET.SERVICIOS")]
     public partial class SERVICIOS

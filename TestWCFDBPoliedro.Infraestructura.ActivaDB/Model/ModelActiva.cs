@@ -1,9 +1,9 @@
 namespace TestWCFDBPoliedro.Infraestructura.ActivaDB.Model
 {
-    using System;
+    //using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
+    //using System.ComponentModel.DataAnnotations.Schema;
+    //using System.Linq
 
     public partial class ModelActiva : DbContext
     {
