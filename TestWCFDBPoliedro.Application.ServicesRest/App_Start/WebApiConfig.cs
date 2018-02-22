@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace TestWCFDBPoliedro.Application.ServicesRest
@@ -9,6 +10,8 @@ namespace TestWCFDBPoliedro.Application.ServicesRest
     {
         public static void Register(HttpConfiguration config)
         {
+            config.Formatters.Clear();
+            config.Formatters.Add(new JsonMediaTypeFormatter());
             // Configuración y servicios de API web
 
             // Rutas de API web
