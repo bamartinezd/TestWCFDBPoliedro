@@ -19,6 +19,7 @@ namespace TestWCFDBPoliedro.Application.ServicesRest.Controllers
         {
             try
             {
+                // test
                 _activacionHandler = new ActivacionHandler();
                 return _activacionHandler.GetAll().Select(Utility.MapperHelper<ActivacionModel, ActivacionDto>);
             }
