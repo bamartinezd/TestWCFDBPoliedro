@@ -8,6 +8,7 @@ namespace TestWCFDBPoliedro.Application.Dto
 {
     public class ActivacionDto
     {
+
         public string SALUDO { get; set; }
         public string NOMBRES { get; set; }
         public string APELLIDO { get; set; }
