@@ -34,12 +34,24 @@ namespace TestWCFDBPoliedro.Infraestructura.ActivaDB.Repositories
 
         public List<ACTIVACION> GetAllByDocument(string documentNumber)
         {
-            throw new NotImplementedException();
+            using (var context = new ModelActiva())
+            {
+                context.Database.Initialize(force: false);
+                var list = context.ACTIVACION.Where(x => x.NUMERO_DOCUMENTO == documentNumber).
+                                   Select(Utility.MapperHelper<ACTIVACION, Model.ACTIVACION>).ToList();
+                return list;
+            }
         }
 
         public List<ACTIVACION> GetAllByMin(string min)
         {
-            throw new NotImplementedException();
+            using (var context = new ModelActiva())
+            {
+                context.Database.Initialize(force: false);
+                var list = context.ACTIVACION.Where(x => x.CODMIN == min).
+                                   Select(Utility.MapperHelper<ACTIVACION, Model.ACTIVACION>).ToList();
+                return list;
+            }
         }
         #endregion
 
