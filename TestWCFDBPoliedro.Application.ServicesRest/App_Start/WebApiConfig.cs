@@ -10,6 +10,7 @@ namespace TestWCFDBPoliedro.Application.ServicesRest
     {
         public static void Register(HttpConfiguration config)
         {
+            //Json
             config.Formatters.Clear();
             config.Formatters.Add(new JsonMediaTypeFormatter());
             // Configuración y servicios de API web
