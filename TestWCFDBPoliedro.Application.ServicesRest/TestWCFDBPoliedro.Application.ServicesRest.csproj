@@ -195,12 +195,14 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ActivacionController.cs" />
+    <Compile Include="Controllers\ContractAllController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ActivacionModel.cs" />
+    <Compile Include="Models\ContractAllModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -274,9 +276,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Application.DtoBSCS\TestWCFDBPoliedro.Application.DtoBSCS.csproj">
+      <Project>{5CB4B149-09F4-4B6B-AF55-D5214F69375D}</Project>
+      <Name>TestWCFDBPoliedro.Application.DtoBSCS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestWCFDBPoliedro.Application.Dto\TestWCFDBPoliedro.Application.Dto.csproj">
       <Project>{11DA0DA9-E69E-4C16-A28E-365534841D96}</Project>
       <Name>TestWCFDBPoliedro.Application.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Application.HandlerBSCS\TestWCFDBPoliedro.Application.HandlerBSCS.csproj">
+      <Project>{5e3410cc-6a83-4395-8c6c-05451ff5fdca}</Project>
+      <Name>TestWCFDBPoliedro.Application.HandlerBSCS</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestWCFDBPoliedro.Application.Handler\TestWCFDBPoliedro.Application.Handler.csproj">
       <Project>{08e19ab2-de26-43db-9957-6276406b87a6}</Project>
