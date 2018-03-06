@@ -13,8 +13,24 @@ namespace TestWCFDBPoliedro.Application.ServicesRest.Controllers
     {
         private ContractAllHandler _contractAllHandler;
 
-        public IEnumerable<ContractAllModel> GetByCoid(decimal coid) {
-            return _contractAllHandler.GetByCoid(coid).Select(Utility.MapperHelper<ContractAllModel, ContractAllDto>);
+        public string Get()
+        {
+            return "Prueba";
+        }
+
+        public IHttpActionResult GetById()//IEnumerable<ContractAllModel> GetById()
+        {
+            try
+            {                
+                _contractAllHandler = new ContractAllHandler();
+                return Ok(_contractAllHandler.GetByCoid(5893940).Select(Utility.MapperHelper<ContractAllModel, ContractAllDto>));
+            }
+            catch (Exception ex)
+            {
+                var result = Utility.ResultMessages(Cross.Common.Enums.Messages.Exception, string.Empty, ex);
+                return Ok(result); //throw new Exception(ex.Message);
+            }
+            
         }
     }
 }

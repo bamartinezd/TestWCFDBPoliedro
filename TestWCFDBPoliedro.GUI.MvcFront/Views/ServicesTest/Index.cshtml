@@ -26,9 +26,10 @@
 @*Mostrar datos*@
 <!-- Table -->
 @if (Model.Count > 0)
-{<div class="input-group-append">
-    <input type="button" class="btn btn-outline-success" value="Excel" onclick="return exportToExcel()" />
-</div>
+{
+    <div class="input-group-append text-right">
+        <input type="button" class="btn btn-outline-success" value="Excel" onclick="return exportToExcel()" />
+    </div>
     <div id="div-table">
         <table id="tblValidations" class="table table-sm table-bordered table-condensed table-responsive animated fadeIn">
             <thead class="thead-dark">

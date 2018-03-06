@@ -13,13 +13,12 @@ namespace TestWCFDBPoliedro.Application.ServicesRest.Controllers
 {
     public class ActivacionController : ApiController
     {
-        private ActivacionHandler _activacionHandler;
+        private ActivacionHandler _activacionHandler;        
 
         public IEnumerable<ActivacionModel> Get()
         {
             try
             {
-                // test
                 _activacionHandler = new ActivacionHandler();
                 return _activacionHandler.GetAll().Select(Utility.MapperHelper<ActivacionModel, ActivacionDto>);
             }
