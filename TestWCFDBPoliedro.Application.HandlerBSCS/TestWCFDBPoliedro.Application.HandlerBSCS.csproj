@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E3410CC-6A83-4395-8C6C-05451FF5FDCA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestWCFDBPoliedro.Application.HandlerBSCS</RootNamespace>
+    <AssemblyName>TestWCFDBPoliedro.Application.HandlerBSCS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContractAllHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Application.DtoBSCS\TestWCFDBPoliedro.Application.DtoBSCS.csproj">
+      <Project>{5CB4B149-09F4-4B6B-AF55-D5214F69375D}</Project>
+      <Name>TestWCFDBPoliedro.Application.DtoBSCS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Cross.Common\TestWCFDBPoliedro.Cross.Common.csproj">
+      <Project>{F8BD493F-D190-4F72-8643-F1C53492F0F1}</Project>
+      <Name>TestWCFDBPoliedro.Cross.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Domain.ContractsBSCS\TestWCFDBPoliedro.Domain.ContractsBSCS.csproj">
+      <Project>{9E443612-8F92-49F8-A5B5-DA2F79399ED7}</Project>
+      <Name>TestWCFDBPoliedro.Domain.ContractsBSCS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Domain.EnterpriseBSCS\TestWCFDBPoliedro.Domain.EnterpriseBSCS.csproj">
+      <Project>{36F6AD64-21BE-4861-9074-1833B444B0DD}</Project>
+      <Name>TestWCFDBPoliedro.Domain.EnterpriseBSCS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Domain.EntityBSCS1\TestWCFDBPoliedro.Domain.EntityBSCS1.csproj">
+      <Project>{84C65F74-409F-4F1E-B8F5-0B0606078015}</Project>
+      <Name>TestWCFDBPoliedro.Domain.EntityBSCS1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWCFDBPoliedro.Infraestructura.BSCSDB\TestWCFDBPoliedro.Infraestructura.BSCSDB.csproj">
+      <Project>{569E3D3C-7EED-4509-9E0E-5185C550DEC4}</Project>
+      <Name>TestWCFDBPoliedro.Infraestructura.BSCSDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
